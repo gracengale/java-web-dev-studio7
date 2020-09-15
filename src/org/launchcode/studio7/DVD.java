@@ -1,6 +1,24 @@
 package org.launchcode.studio7;
 
-public class DVD {
+import java.util.ArrayList;
+
+public class DVD extends BaseDisc implements OpticalDisc {
+
+    public DVD(String name, String discType, ArrayList<String> someContents) {
+        super(name, discType, someContents);
+    }
+
+    @Override
+    public String spinDisc() {
+        this.setSpinning(true);
+        return this.getDiscType() + " is spinning at a rate of 200 - 500 rpm.";
+    }
+
+    @Override
+    public void stopSpin() {
+        this.setSpinning(false);
+    }
+
 
     // TODO: Implement your custom interface.
 
